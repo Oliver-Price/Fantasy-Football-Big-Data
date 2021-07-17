@@ -11,7 +11,7 @@ import pickle
 
 #%%
 
-save = r"C:\PhD\Python\FF codes\save\19\plist.pickle"
+save = r"C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\21\plist.pickle"
         
 with open (save, 'rb') as f:
     plist = pickle.load(f)
@@ -160,7 +160,7 @@ df = pd.concat([df, df_stats.reset_index(drop=True)], axis=1, sort=False)
 df = pd.concat([df, df_bids.reset_index(drop=True)], axis=1, sort=False)
 
 #%%
-save = r'C:\PhD\Python\FF codes\save\19\df.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df.pickle'
 
 with open (save, 'wb') as f:
     pickle.dump(df, f)
@@ -170,35 +170,35 @@ with open (save, 'wb') as f:
 import pickle
 import pandas as pd
 
-save = r'C:\PhD\Python\FF codes\save\19\df.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df.pickle'
   
 with open(save, 'rb') as f:
     df = pickle.load(f)
 
 #%%
     
-save = r'C:\PhD\Python\FF codes\save\19\df_names.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_names.pickle'
   
 with open(save, 'rb') as f:
     df_names = pickle.load(f)
     
-save = r'C:\PhD\Python\FF codes\save\19\df_positions.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_positions.pickle'
   
 with open(save, 'rb') as f:
     df_positions = pickle.load(f)
     
-save = r'C:\PhD\Python\FF codes\save\19\df_clubs.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_clubs.pickle'
   
 with open(save, 'rb') as f:
     df_clubs = pickle.load(f)
     
-save = r'C:\PhD\Python\FF codes\save\19\df_stats.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_stats.pickle'
   
 with open(save, 'rb') as f:
     df_stats = pickle.load(f)
     
 '''
-save = r'C:\PhD\Python\FF codes\save\19\df_bids.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_bids.pickle'
   
 with open(save, 'rb') as f:
     df_bids = pickle.load(f)
@@ -206,27 +206,27 @@ with open(save, 'rb') as f:
 
 #%%
 
-save = r'C:\PhD\Python\FF codes\save\19\df_names.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_names.pickle'
   
 with open (save, 'wb') as f:
     pickle.dump(df_names, f)
     
-save = r'C:\PhD\Python\FF codes\save\19\df_positions.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_positions.pickle'
   
 with open (save, 'wb') as f:
     pickle.dump(df_positions, f)
     
-save = r'C:\PhD\Python\FF codes\save\19\df_clubs.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_clubs.pickle'
   
 with open (save, 'wb') as f:
-    pickle.dump(df_teams, f)
+    pickle.dump(df_clubs, f)
     
-save = r'C:\PhD\Python\FF codes\save\19\df_stats.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_stats.pickle'
   
 with open (save, 'wb') as f:
     pickle.dump(df_stats, f)
     
-save = r'C:\PhD\Python\FF codes\save\19\df_bids.pickle'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_bids.pickle'
   
 with open (save, 'wb') as f:
     pickle.dump(df_bids, f)

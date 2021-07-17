@@ -1,6 +1,12 @@
 # -*- coding: utf-8 -*-
+import requests
+from bs4 import BeautifulSoup
+import numpy as np
+import pandas as pd
+import pickle
+
 start = 7032
-end = 7685
+end = 7688
 
 pllist = []
 
@@ -18,7 +24,7 @@ for x in range(start,end+1):
         pllist.append(x)
     print(x)
     
-save = r"C:\PhD\Python\FF codes\save\19\plist.pickle"
+save = r"C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\21\plist.pickle"
 
 with open (save, 'wb') as f:
     pickle.dump(pllist, f)
