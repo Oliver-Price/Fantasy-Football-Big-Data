@@ -98,8 +98,8 @@ dfb = pd.DataFrame([st],columns = mainstats)
     
 #%%
 
-start = 6180
-end = 7031
+start = 8333
+end = 8849
 
 pllist = []
 

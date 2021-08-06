@@ -8,12 +8,17 @@ from bs4 import BeautifulSoup
 import numpy as np
 import pandas as pd
 import pickle
+import os
 
-#%%
+year = '21'
+save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save'
+save = os.path.join(save,year)
 
-save = r"C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\21\plist.pickle"
+#%% load player number list
+
+save_plist = os.path.join(save,"plist.pickle")
         
-with open (save, 'rb') as f:
+with open (save_plist , 'rb') as f:
     plist = pickle.load(f)
     
 #%% GET PLAYER NAMES
@@ -34,7 +39,14 @@ for x in range(0,len(plist)):
         print(float(x)*100/len(plist))
         
 names = [x.strip() for x in names]
-df = pd.DataFrame({'Name':names})     
+df_names = pd.DataFrame({'Name':names})
+
+#%% Save Player Names
+
+save_names = os.path.join(save,'df_names.pickle')
+  
+with open (save_names, 'wb') as f:
+    pickle.dump(df_names, f)  
 
 #%% GET PLAYER TEAMS/POSITIONS
 
@@ -159,57 +171,13 @@ df = pd.concat([df, df_positions], axis=1, sort=False)
 df = pd.concat([df, df_stats.reset_index(drop=True)], axis=1, sort=False)
 df = pd.concat([df, df_bids.reset_index(drop=True)], axis=1, sort=False)
 
-#%%
+#%% 
 save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df.pickle'
 
 with open (save, 'wb') as f:
     pickle.dump(df, f)
 
-#%% FOR WILL
-    
-import pickle
-import pandas as pd
-
-save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df.pickle'
-  
-with open(save, 'rb') as f:
-    df = pickle.load(f)
-
 #%%
-    
-save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_names.pickle'
-  
-with open(save, 'rb') as f:
-    df_names = pickle.load(f)
-    
-save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_positions.pickle'
-  
-with open(save, 'rb') as f:
-    df_positions = pickle.load(f)
-    
-save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_clubs.pickle'
-  
-with open(save, 'rb') as f:
-    df_clubs = pickle.load(f)
-    
-save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_stats.pickle'
-  
-with open(save, 'rb') as f:
-    df_stats = pickle.load(f)
-    
-'''
-save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_bids.pickle'
-  
-with open(save, 'rb') as f:
-    df_bids = pickle.load(f)
-'''
-
-#%%
-
-save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_names.pickle'
-  
-with open (save, 'wb') as f:
-    pickle.dump(df_names, f)
     
 save = r'C:\PhD\Python\notebooks\Fantasy-Football-Big-Data\save\19\df_positions.pickle'
   
